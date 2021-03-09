@@ -1,11 +1,11 @@
 <?php
 return [
     '' => [
-        'controller' => 'Main',
+        'controller' => 'main',
         'action' => 'index'
     ],
     'post/([0-9]+)' => [
-        'controller' => 'Post',
+        'controller' => 'post',
         'action' => 'view'
     ],
 ];

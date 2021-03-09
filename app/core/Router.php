@@ -39,16 +39,16 @@ class Router
             if(class_exists($controllerPath)) {
                 $action = $this->route['action'] . 'Action';
                 if(method_exists($controllerPath, $action)) {
-                    $controller = new $controllerPath();
-                    $controller->$action($this->route['param']);
+                    $controller = new $controllerPath($this->route);
+                    $controller->$action();
                 } else {
-                    // error 404
+                    View::errorPage(404);
                 }
             } else {
-                // error 404
+                View::errorPage(404);
             }
         } else {
-            // error 404
+            View::errorPage(404);
         }
     }
 }
