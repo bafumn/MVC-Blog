@@ -3,12 +3,15 @@
 namespace App\Controllers;
 
 use App\Core\Controller;
+use App\Models\Post;
 
 class MainController extends Controller
 {
     public function indexAction()
     {
-        $this->view->render('Blog Engine');
+        $this->model = new Post;
+        $posts = $this->model->getPosts();
+        $this->view->render('Blog Engine', ['posts'=>$posts]);
     }
 
     public function aboutAction()

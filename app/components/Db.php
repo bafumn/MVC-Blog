@@ -38,19 +38,25 @@ class Db
         return $stmt;
     }
 
-    public function row($sql, $params = [])
+    public function getAll($sql, $params = [])
     {
         $result = $this->query($sql, $params);
         return $result->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    public function column($sql, $params = [])
+    public function getRow($sql, $params = [])
+    {
+        $result = $this->query($sql, $params);
+        return $result->fetch(PDO::FETCH_ASSOC);
+    }
+
+    public function getColumn($sql, $params = [])
     {
         $result = $this->query($sql, $params);
         return $result->fetchColumn();
     }
 
-    public function lastInsertId()
+    public function getLastInsertId()
     {
         return $this->db->lastInsertId();
     }

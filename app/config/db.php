@@ -1,9 +1,9 @@
 <?php
 
 return [
-    'host' => '',
-	'db_name' => '',
-	'username' => '',
-	'password' => '',
-    'charset' => ''
+    'host' => '127.0.0.1',
+	'db_name' => 'blog',
+	'username' => 'root',
+	'password' => 'root',
+    'charset' => 'utf8'
 ];

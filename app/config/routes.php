@@ -1,6 +1,9 @@
 <?php
 return [
-
+    'articles' => [
+        'controller' => 'post',
+        'action' => 'view'
+    ],
     'post/([0-9]+)' => [
         'controller' => 'post',
         'action' => 'view'

@@ -8,11 +8,12 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
+    <title><?php echo $title; ?></title>
     <!-- Bootstrap core CSS -->
-    <link href="public/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/public/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="public/css/style.css" rel="stylesheet">
+    <link href="/public/css/style.css" rel="stylesheet">
 
 </head>
 
@@ -69,8 +70,8 @@
 </footer>
 
 <!-- Bootstrap core JavaScript -->
-<script src="public/scripts/jquery.min.js"></script>
-<script src="public/scripts/bootstrap.bundle.min.js"></script>
+<script src="/public/scripts/jquery.min.js"></script>
+<script src="/public/scripts/bootstrap.bundle.min.js"></script>
 
 </body>
 
