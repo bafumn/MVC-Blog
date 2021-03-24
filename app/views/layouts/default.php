@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title><?php echo $title; ?></title>
+    <title><?php echo ucfirst($title); ?></title>
     <!-- Bootstrap core CSS -->
     <link href="/public/css/bootstrap.min.css" rel="stylesheet">
 
@@ -35,7 +35,7 @@
                     <a class="nav-link" href="about">About</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="categories">Categories</a>
+                    <a class="nav-link" href="/categories">Categories</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="contact">Contact</a>

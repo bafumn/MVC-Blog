@@ -8,13 +8,17 @@ return [
         'controller' => 'post',
         'action' => 'view'
     ],
+    'categories' => [
+        'controller' => 'category',
+        'action' => 'index'
+    ],
+    'category/([a-z]+|[0-9]+)' => [
+        'controller' => 'category',
+        'action' => 'view'
+    ],
     'about' => [
         'controller' => 'main',
         'action' => 'about'
-    ],
-    'categories' => [
-        'controller' => 'main',
-        'action' => 'category'
     ],
     'contact' => [
         'controller' => 'main',

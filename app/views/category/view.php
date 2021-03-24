@@ -21,11 +21,12 @@
                 <div class="col">
                     <ul class="list-group">
                         <?php foreach ($categories as $category): ?>
-                            <a href="category/<?php echo lcfirst($category['name']); ?>" class="list-group-item d-flex justify-content-between align-items-center">
+                            <a href="/category/<?php echo lcfirst($category['name']); ?>" class="list-group-item d-flex justify-content-between align-items-center">
                                 <?php echo $category['name']?>
                                 <span class="badge badge-primary badge-pill"><?php echo $category['count'] ?></span>
                             </a>
                         <?php endforeach; ?>
+
                     </ul>
                 </div>
             </div>
@@ -35,7 +36,7 @@
 <div class="col-md-8">
 
     <h1 class="my-4">
-        <small>Newest Posts</small>
+        <small><?php echo $title; ?></small>
     </h1>
     <!-- Blog Post -->
     <?php foreach ($posts as $post): ?>
@@ -46,10 +47,10 @@
             <div class="card-body">
                 <h2 class="card-title"><?php echo $post['title']; ?></h2>
                 <p class="card-text"><?php echo $post['description'] ?></p>
-                <a href="post/<?php echo $post['id'] ?>" class="btn btn-primary">Read More &rarr;</a>
+                <a href="/post/<?php echo $post['id'] ?>" class="btn btn-primary">Read More &rarr;</a>
             </div>
             <div class="card-footer text-muted">
-                Posted on <?php echo date('d/m/Y', $post['created_at']) . ' | ' ?> <a href="/category/<?php echo lcfirst($post['category_name']); ?>"><?php echo $post['category_name'] ?></a>
+                Posted on <?php echo date('d/m/Y', $post['created_at']) . ' | '?> <a href="/category/<?php echo lcfirst($post['category_name']) ?>"><?php echo $title; ?></a>
             </div>
         </div>
     <?php endforeach; ?>

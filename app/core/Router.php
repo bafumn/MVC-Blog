@@ -21,9 +21,7 @@ class Router
             if(preg_match("#^$pattern$#", $url, $matches)) {
                 $this->route = $params;
                 foreach($matches as $match => $val) {
-                    if(is_numeric($val)) {
-                        $this->route['param'] = (int) $val;
-                    }
+                    $this->route['param'] = $val;
                 }
                 return true;
             }

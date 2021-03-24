@@ -15,10 +15,9 @@ class Db
 
     public function connect()
     {
-        $config = require_once 'app/config/db.php';
-        $dsn = 'mysql:host=' . $config['host'] . ';dbname=' . $config['db_name'] . ';charset=' . $config['charset'];
+        $config = require 'app/config/db.php';
+        $dsn = 'mysql:host=' . $config['host'] . ';dbname=' . $config['db_name'];
         $this->db = new PDO($dsn, $config['username'], $config['password']);
-        return $this->db;
     }
 
     public function query($sql, $params = [])
