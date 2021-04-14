@@ -18,7 +18,7 @@ abstract class Controller
     public function loadModel($modelName)
     {
         $model = 'App\Models\\' . ucfirst($modelName);
-        if(class_exists($model)) {
+        if (class_exists($model)) {
             return new $model;
         }
     }

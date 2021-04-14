@@ -9,7 +9,7 @@ class PostController extends Controller
     public function viewAction()
     {
         $vars = [
-            'post' => $this->model->getPostById($this->route['param'])
+            'post' => $this->model->getPostById($this->route['id'])
         ];
 
         $this->view->render($vars['post']['title'], $vars);

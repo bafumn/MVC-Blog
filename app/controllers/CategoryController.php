@@ -18,7 +18,7 @@ class CategoryController extends Controller
     public function viewAction()
     {
         $post = new Post;
-        $category = $this->model->getCategory($this->route['param']);
+        $category = $this->model->getCategory($this->route['name']);
         $vars = [
             'posts' => $post->getPostsByCategory($category['id']),
             'categories' => $this->model->getCategories(),

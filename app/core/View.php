@@ -20,7 +20,7 @@ class View
     {
         extract($vars);
         $view = 'app/views/' . $this->view . '.php';
-        if(file_exists($view)) {
+        if (file_exists($view)) {
             ob_start();
             require $view;
             $content = ob_get_clean();
@@ -32,7 +32,7 @@ class View
     {
         http_response_code($code);
         $path = 'app/views/errors/' . $code . '.php';
-        if(file_exists($path)) {
+        if (file_exists($path)) {
             require $path;
         }
     }
