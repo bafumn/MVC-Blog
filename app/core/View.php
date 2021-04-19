@@ -19,7 +19,7 @@ class View
     public function render($title, $vars = [])
     {
         extract($vars);
-        $view = 'app/views/' . $this->view . '.php';
+        $view = 'app/views/' . $this->route['prefix'] . $this->view . '.php';
         if (file_exists($view)) {
             ob_start();
             require $view;
