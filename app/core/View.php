@@ -36,4 +36,9 @@ class View
             require $path;
         }
     }
+
+    public function message($message)
+    {
+        exit(json_encode($message));
+    }
 }

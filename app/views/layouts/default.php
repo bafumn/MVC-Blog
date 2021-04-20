@@ -16,8 +16,7 @@
     <link href="/public/css/style.css" rel="stylesheet">
 
 </head>
-
-<body>
+<body class="pt-5">
 
 <!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
@@ -28,7 +27,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item active">
+                <li class="nav-item">
                     <a class="nav-link" href="/">Home</a>
                 </li>
                 <li class="nav-item">
@@ -40,15 +39,11 @@
                 <li class="nav-item">
                     <a class="nav-link" href="contact">Contact</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="login">Login</a>
-                </li>
             </ul>
         </div>
     </div>
 </nav>
 
-<!-- Page Content -->
 <div class="container">
 
     <div class="row">
@@ -64,7 +59,7 @@
 <!-- Footer -->
 <footer class="py-5 bg-dark">
     <div class="container">
-        <p class="m-0 text-center text-white">Copyright &copy; Your Website 2020</p>
+        <p class="m-0 text-center text-white">Footer</p>
     </div>
     <!-- /.container -->
 </footer>
@@ -72,6 +67,7 @@
 <!-- Bootstrap core JavaScript -->
 <script src="/public/scripts/jquery.min.js"></script>
 <script src="/public/scripts/bootstrap.bundle.min.js"></script>
+<script src="/public/scripts/scripts.js"></script>
 
 </body>
 

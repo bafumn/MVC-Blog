@@ -1,14 +1,4 @@
-<header id="main-header" class="py-2 bg-primary text-white">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6">
-                <h1><i class="fa fa-gear"></i> Admin panel</h1>
-            </div>
-        </div>
-    </div>
-</header>
-
-<!------------------------------------Actions------------------------->
+<!-- actions -->
 <section id="action" class="py-4 mb-4 bg-light">
     <div class="container">
         <div class="row">
@@ -86,8 +76,7 @@
     </div>
 </section>
 
-<!------------------------POST MODAL-------------------------------------->
-
+<!-- post modal -->
 <div class="modal fade" id="addPostModal">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
@@ -131,8 +120,7 @@
 </div>
 
 
-<!------------------------CATEGORY MODAL-------------------------------------->
-
+<!-- category modal -->
 <div class="modal fade" id="addCategoryModal">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
@@ -156,8 +144,7 @@
     </div>
 </div>
 
-<!------------------------USER MODAL-------------------------------------->
-
+<!-- user modal -->
 <div class="modal fade" id="addUserModal">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">

@@ -49,7 +49,7 @@
                     </div>
                 </li>
                 <li class="nav-item">
-                    <a href="login.html" class="nav-link">
+                    <a href="/admin/logout" class="nav-link">
                         <i class="fa fa-user-times"></i>
                         Logout</a>
                 </li>
@@ -57,12 +57,22 @@
         </div>
     </div>
 </nav>
+<header id="main-header" class="py-2 bg-primary text-white">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h1><i class="fa fa-gear"></i> <?php echo $title; ?></h1>
+            </div>
+        </div>
+    </div>
+</header>
 
 <?php echo $content; ?>
 
 <script src="../public/scripts/jquery.min.js"></script>
 <script src="../public/scripts/popper.min.js"></script>
 <script src="../public/scripts/bootstrap.min.js"></script>
+<script src="../public/scripts/scripts.js"></script>
 <script src="https://cdn.ckeditor.com/4.10.1/standard/ckeditor.js"></script>
 <script>
     CKEDITOR.replace('editor1');
