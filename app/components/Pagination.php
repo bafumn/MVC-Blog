@@ -51,7 +51,10 @@ class Pagination
         if (!$text) {
             $text = $page;
         }
-        return '<li class="page-item"><a class="page-link" href="/' . $this->path . '/' . $this->index . $page . '">' . $text . '</a></li>';
+        $path = trim($this->path, '/') . '/';
+        $currentURI = rtrim($_SERVER['REQUEST_URI'], '/');
+        $currentURI = preg_replace('~/[0-9]+~', '', $currentURI);
+        return '<li class="page-item"><a class="page-link" href="' . $currentURI . $path . $this->index . $page . '">' . $text . '</a></li>';
     }
 
     private function limits()

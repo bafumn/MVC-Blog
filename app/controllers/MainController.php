@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use App\Components\Pagination;
 use App\Core\Controller;
 use App\Models\Post;
 use App\Models\Category;
@@ -12,9 +13,11 @@ class MainController extends Controller
     {
         $post = new Post;
         $category = new Category;
+        $pagination = new Pagination($this->route, $post->countAllPosts(), 'articles');
         $vars = [
-            'posts' => $post->getPosts(),
-            'categories' => $category->getCategories()
+            'posts' => $post->getLatestPosts($this->route),
+            'categories' => $category->getCategories(),
+            'pagination' => $pagination->get()
         ];
         $this->view->render('Blog Engine', $vars);
     }

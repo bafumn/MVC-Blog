@@ -1,11 +1,13 @@
 <?php
 return [
     // article
-    'articles' => ['controller' => 'post', 'action' => 'view'],
     'post/(?P<id>[0-9]+)' => ['controller' => 'post', 'action' => 'view'],
+    'articles/(?P<page>[0-9]+)' => ['controller' => 'post', 'action' => 'index'],
+    'articles' => ['controller' => 'post', 'action' => 'index'],
     // category
-    'categories' => ['controller' => 'category','action' => 'index'],
     'category/(?P<name>[a-z]+|[0-9]+)' => ['controller' => 'category', 'action' => 'view'],
+    'category/(?P<name>[a-z]+|[0-9]+)/(?P<page>[0-9]+)' => ['controller' => 'category', 'action' => 'view'],
+    'categories' => ['controller' => 'category','action' => 'index'],
     // admin panel
     'admin/login' => ['controller' => 'user', 'action' => 'login', 'prefix' => 'admin'],
     'admin/logout' => ['controller' => 'user', 'action' => 'logout', 'prefix' => 'admin'],
