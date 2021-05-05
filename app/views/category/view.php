@@ -41,8 +41,9 @@
     <!-- Blog Post -->
     <?php foreach ($posts as $post): ?>
         <div class="card mb-4">
-            <?php if($post['picture']): ?>
-                <img class="card-img-top" src="http://placehold.it/750x300" alt="Card image cap">
+            <?php $imgPath = 'public/uploads/img/' . $post['id'] . '.jpg'; ?>
+            <?php if (file_exists($imgPath)): ?>
+                <img class="card-img-top img-fluid" src="/<?php  echo $imgPath ?>">
             <?php endif; ?>
             <div class="card-body">
                 <h2 class="card-title"><?php echo $post['title']; ?></h2>

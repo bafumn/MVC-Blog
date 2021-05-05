@@ -40,14 +40,16 @@
                         </tr>
                         </thead>
                         <tbody>
+                        <?php foreach ($posts as $post): ?>
                             <tr>
-                                <td scope="row">1</td>
-                                <td>Post One</td>
-                                <td>Tech Gadgets</td>
-                                <td>July 13, 2018</td>
+                                <td scope="row"><?php echo $post['id']; ?></td>
+                                <td><?php echo $post['title']; ?></td>
+                                <td><?php echo $post['category_name'] ?></td>
+                                <td><?php echo date('d/m/Y', $post['created_at']) ?></td>
                                 <td><a href="" class="btn btn-secondary"> <i class="fa fa-angle-double-right"></i>
                                         Details</a></td>
                             </tr>
+                        <?php endforeach; ?>
                         </tbody>
                     </table>
                 </div>
@@ -56,18 +58,12 @@
                 <div class="card text-center bg-primary text-white mb-3">
                     <div class="card-body">
                         <h3>Posts</h3>
-                        <h1 class="display-4">
-                            <i class="fa fa-pencil"></i> 6
-                        </h1>
                         <a href="posts.html" class="btn btn-outline-light btn-sm">View</a>
                     </div>
                 </div>
                 <div class="card text-center bg-success text-white mb-3">
                     <div class="card-body">
                         <h3>Categories</h3>
-                        <h1 class="display-4">
-                            <i class="fa fa-folder-open"></i> 4
-                        </h1>
                         <a href="categories.html" class="btn btn-outline-light btn-sm">View</a>
                     </div>
                 </div>
@@ -85,35 +81,39 @@
                 <button class="close" data-dismiss="modal"><span>&times;</span></button>
             </div>
             <div class="modal-body">
-                <form>
+                <form action="/admin/post/add" method="post" class="form-validate">
                     <div class="form-group">
                         <label for="title">Title</label>
-                        <input type="text" class="form-control">
+                        <input type="text" name="title" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="title">Description</label>
+                        <input type="text" name="description" class="form-control">
                     </div>
                     <div class="form-group">
                         <label for="category">Category</label>
-                        <input type="text" class="form-control">
-                        <select class="form-control">
-                            <option value="">Web Development</option>
-                            <option>Tech Gadgets</option>
-                            <option>Business</option>
-                            <option value="">Health & Welness</option>
+                        <select name="category" class="form-control">
+                            <option value="0"></option>
+                            <?php foreach ($categories as $category): ?>
+                                <option value="<?php echo $category['id'] ?>"><?php echo $category['name']; ?></option>
+                            <?php endforeach; ?>
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="file">Image Upload</label>
-                        <input type="file" class="form-control-file">
+                        <input type="file" name="image" class="form-control-file">
                         <small class="form-text text-muted">Max Size 3mb</small>
                     </div>
                     <div class="form-group">
                         <label for="body">Body</label>
-                        <textarea name="editor1" class="form-control"></textarea>
+                        <textarea rows="10" name="editor1" id="editor" class="form-control h-25"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" class="btn btn-primary" value="Save">
+                        <input type="submit" class="btn btn-secondary" data-dismiss="modal" value="Close">
+                        <p class="result pt-2 text-danger float-right"></p>
                     </div>
                 </form>
-            </div>
-            <div class="modal-footer">
-                <button class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button class="btn btn-primary" data-dismiss="modal">Save Changes</button>
             </div>
         </div>
     </div>

@@ -6,10 +6,11 @@
     <p>Posted on <?php echo date('d/m/Y | H:i', $post['created_at']) ?></p>
     <hr>
     <!-- Preview Image -->
-    <?php if ($post['picture']): ?>
-        <img class="img-fluid rounded" src="http://placehold.it/1200x400" alt="">
-        <hr>
+    <?php $imgPath = 'public/uploads/img/' . $post['id'] . '.jpg'; ?>
+    <?php if (file_exists($imgPath)): ?>
+        <img class="card-img-top img-fluid" src="/<?php  echo $imgPath ?>">
     <?php endif; ?>
+
     <?php echo $post['content']; ?>
 </div>
 

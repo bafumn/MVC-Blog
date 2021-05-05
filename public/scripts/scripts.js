@@ -10,7 +10,6 @@ $(document).ready(function() {
             cache: false,
             processData: false,
             success: function(result) {
-                console.log(result)
                 json = JSON.parse(result);
                 console.log(json)
                 if (json.url) {
@@ -21,5 +20,4 @@ $(document).ready(function() {
             },
         });
     });
-    $('')
 });

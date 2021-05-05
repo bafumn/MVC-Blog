@@ -20,7 +20,7 @@ class CategoryController extends Controller
     {
         $post = new Post;
         $category = $this->model->getCategory($this->route['name']);
-        $pagination = new Pagination($this->route, $post->countAllPosts());
+        $pagination = new Pagination($this->route, $post->countPostsInCategory($category['id']));
         $vars = [
             'posts' => $post->getPostsByCategory($category['id'], $this->route),
             'categories' => $this->model->getCategories(),

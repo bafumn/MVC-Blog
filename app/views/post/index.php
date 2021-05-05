@@ -21,7 +21,7 @@
                 <div class="col">
                     <ul class="list-group">
                         <?php foreach ($categories as $category): ?>
-                            <a href="category/<?php echo lcfirst($category['name']); ?>" class="list-group-item d-flex justify-content-between align-items-center">
+                            <a href="/category/<?php echo lcfirst($category['name']); ?>" class="list-group-item d-flex justify-content-between align-items-center">
                                 <?php echo $category['name']?>
                                 <span class="badge badge-primary badge-pill"><?php echo $category['count'] ?></span>
                             </a>
@@ -40,13 +40,14 @@
     <!-- Blog Post -->
     <?php foreach ($posts as $post): ?>
         <div class="card mb-4">
-            <?php if($post['picture']): ?>
-                <img class="card-img-top" src="http://placehold.it/750x300" alt="Card image cap">
+            <?php $imgPath = 'public/uploads/img/' . $post['id'] . '.jpg'; ?>
+            <?php if (file_exists($imgPath)): ?>
+                <img class="card-img-top img-fluid" src="/<?php  echo $imgPath ?>">
             <?php endif; ?>
             <div class="card-body">
                 <h2 class="card-title"><?php echo $post['title']; ?></h2>
                 <p class="card-text"><?php echo $post['description'] ?></p>
-                <a href="post/<?php echo $post['id'] ?>" class="btn btn-primary">Read More &rarr;</a>
+                <a href="/post/<?php echo $post['id'] ?>" class="btn btn-primary">Read More &rarr;</a>
             </div>
             <div class="card-footer text-muted">
                 Posted on <?php echo date('d/m/Y', $post['created_at']) . ' | ' ?> <a href="/category/<?php echo lcfirst($post['category_name']); ?>"><?php echo $post['category_name'] ?></a>

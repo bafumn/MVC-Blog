@@ -73,9 +73,13 @@
 <script src="../public/scripts/popper.min.js"></script>
 <script src="../public/scripts/bootstrap.min.js"></script>
 <script src="../public/scripts/scripts.js"></script>
-<script src="https://cdn.ckeditor.com/4.10.1/standard/ckeditor.js"></script>
+<script src="https://cdn.ckeditor.com/ckeditor5/27.1.0/classic/ckeditor.js"></script>
 <script>
-    CKEDITOR.replace('editor1');
+    ClassicEditor
+        .create( document.querySelector( '#editor' ) )
+        .catch( error => {
+            console.error( error );
+        } );
 </script>
 </body>
 </html>
