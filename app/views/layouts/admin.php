@@ -21,16 +21,16 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item px-2">
-                    <a href="index.html" class="nav-link active">Dashboard</a>
+                    <a href="/admin" class="nav-link">Dashboard</a>
                 </li>
                 <li class="nav-item px-2">
-                    <a href="posts.html" class="nav-link">Posts</a>
+                    <a href="/admin/posts" class="nav-link">Posts</a>
                 </li>
                 <li class="nav-item px-2">
-                    <a href="categories.html" class="nav-link">Categories</a>
+                    <a href="/admin/categories" class="nav-link">Categories</a>
                 </li>
                 <li class="nav-item px-2">
-                    <a href="users.html" class="nav-link">Users</a>
+                    <a href="/admin/users" class="nav-link">Users</a>
                 </li>
             </ul>
 
@@ -69,14 +69,14 @@
 
 <?php echo $content; ?>
 
-<script src="../public/scripts/jquery.min.js"></script>
-<script src="../public/scripts/popper.min.js"></script>
-<script src="../public/scripts/bootstrap.min.js"></script>
-<script src="../public/scripts/scripts.js"></script>
+<script src="/public/scripts/jquery.min.js"></script>
+<script src="/public/scripts/popper.min.js"></script>
+<script src="/public/scripts/bootstrap.min.js"></script>
+<script src="/public/scripts/scripts.js"></script>
 <script src="https://cdn.ckeditor.com/ckeditor5/27.1.0/classic/ckeditor.js"></script>
 <script>
     ClassicEditor
-        .create( document.querySelector( '#editor' ) )
+        .create( document.querySelector( '.editor' ) )
         .catch( error => {
             console.error( error );
         } );

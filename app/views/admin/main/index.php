@@ -14,7 +14,7 @@
             </div>
             <div class="col-md-3">
                 <a href="#" class="btn btn-warning btn-block" data-toggle="modal" data-target="#addUserModal">
-                    <i class="fa fa-plus"></i> Add User
+                    <i class="fa fa-plus"></i> Add Admin
                 </a>
             </div>
         </div>
@@ -46,7 +46,7 @@
                                 <td><?php echo $post['title']; ?></td>
                                 <td><?php echo $post['category_name'] ?></td>
                                 <td><?php echo date('d/m/Y', $post['created_at']) ?></td>
-                                <td><a href="" class="btn btn-secondary"> <i class="fa fa-angle-double-right"></i>
+                                <td><a href="/admin/post/edit/<?php echo $post['id'] ?>" class="btn btn-secondary"> <i class="fa fa-angle-double-right"></i>
                                         Details</a></td>
                             </tr>
                         <?php endforeach; ?>
@@ -58,13 +58,13 @@
                 <div class="card text-center bg-primary text-white mb-3">
                     <div class="card-body">
                         <h3>Posts</h3>
-                        <a href="posts.html" class="btn btn-outline-light btn-sm">View</a>
+                        <a href="/admin/posts" class="btn btn-outline-light btn-sm">View</a>
                     </div>
                 </div>
                 <div class="card text-center bg-success text-white mb-3">
                     <div class="card-body">
                         <h3>Categories</h3>
-                        <a href="categories.html" class="btn btn-outline-light btn-sm">View</a>
+                        <a href="/admin/categories" class="btn btn-outline-light btn-sm">View</a>
                     </div>
                 </div>
             </div>
@@ -106,7 +106,7 @@
                     </div>
                     <div class="form-group">
                         <label for="body">Body</label>
-                        <textarea rows="10" name="editor1" id="editor" class="form-control h-25"></textarea>
+                        <textarea rows="10" name="editor" id="editor" class="form-control h-25"></textarea>
                     </div>
                     <div class="form-group">
                         <input type="submit" class="btn btn-primary" value="Save">
