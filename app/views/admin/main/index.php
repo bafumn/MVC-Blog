@@ -106,7 +106,7 @@
                     </div>
                     <div class="form-group">
                         <label for="body">Body</label>
-                        <textarea rows="10" name="editor" id="editor" class="form-control h-25"></textarea>
+                        <textarea rows="10" name="editor" class="form-control h-25 editor"></textarea>
                     </div>
                     <div class="form-group">
                         <input type="submit" class="btn btn-primary" value="Save">

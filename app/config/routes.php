@@ -9,6 +9,9 @@ return [
     'category/(?P<name>[a-z]+|[0-9]+)/(?P<page>[0-9]+)' => ['controller' => 'category', 'action' => 'view'],
     'categories' => ['controller' => 'category','action' => 'index'],
     // article control
+    'admin/post/add' => ['controller' => 'post', 'action' => 'add', 'prefix' => 'admin'],
+    'admin/post/edit/(?P<id>[0-9]+)' => ['controller' => 'post', 'action' => 'edit', 'prefix' => 'admin'],
+    'admin/post/delete/(?P<id>[0-9]+)' => ['controller' => 'post', 'action' => 'delete', 'prefix' => 'admin'],
     'admin/posts/(?P<page>[0-9]+)' => ['controller' => 'post', 'action' => 'index', 'prefix' => 'admin'],
     'admin/posts' => ['controller' => 'post', 'action' => 'index', 'prefix' => 'admin'],
     // category control
