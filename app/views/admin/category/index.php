@@ -20,9 +20,9 @@
                         </tr>
                         <?php foreach ($categories as $category): ?>
                             <tr>
-                                <td scope="row"><?php echo $category['id'] ?></td>
-                                <td><?php echo $category['name'] ?></td>
-                                <td><a href="">Delete</a></td>
+                                <td scope="row"><?php echo $category['id']; ?></td>
+                                <td><?php echo $category['name']; ?></td>
+                                <td><a href="/admin/category/edit/<?php  echo $category['id']; ?>">Edit</a></td>
                             </tr>
                         <?php endforeach; ?>
                         </tbody>

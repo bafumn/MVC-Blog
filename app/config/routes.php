@@ -15,6 +15,9 @@ return [
     'admin/posts/(?P<page>[0-9]+)' => ['controller' => 'post', 'action' => 'index', 'prefix' => 'admin'],
     'admin/posts' => ['controller' => 'post', 'action' => 'index', 'prefix' => 'admin'],
     // category control
+    'admin/category/add' => ['controller' => 'category', 'action' => 'add', 'prefix' => 'admin'],
+    'admin/category/edit/(?P<id>[0-9]+)' => ['controller' => 'category', 'action' => 'edit', 'prefix' => 'admin'],
+    'admin/category/delete/(?P<id>[0-9]+)' => ['controller' => 'category', 'action' => 'delete', 'prefix' => 'admin'],
     'admin/categories' => ['controller' => 'category', 'action' => 'index', 'prefix' => 'admin'],
     // user control
     'admin/login' => ['controller' => 'user', 'action' => 'login', 'prefix' => 'admin'],
