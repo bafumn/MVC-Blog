@@ -66,7 +66,7 @@ class Post extends Model
     public function addPost($post)
     {
         $params = [
-            'id' => 1,
+            'id' => NULL,
             'title' => $post['title'],
             'author_id' => $_SESSION['admin']['id'],
             'category_id' => $post['category'],

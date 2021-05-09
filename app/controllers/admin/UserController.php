@@ -31,4 +31,14 @@ class UserController extends Controller
         header('Location: /');
     }
 
+    public function addAction()
+    {
+        if (!empty($_POST)) {
+            if (!$this->model->userValidate($_POST)) {
+                $this->view->message($this->model->error);
+            }
+            $this->model->addUser($_POST);
+            $this->view->message(['url' => 'admin']);
+        }
+    }
 }

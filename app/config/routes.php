@@ -20,6 +20,7 @@ return [
     'admin/category/delete/(?P<id>[0-9]+)' => ['controller' => 'category', 'action' => 'delete', 'prefix' => 'admin'],
     'admin/categories' => ['controller' => 'category', 'action' => 'index', 'prefix' => 'admin'],
     // user control
+    'admin/user/add' => ['controller' => 'user', 'action' => 'add', 'prefix' => 'admin'],
     'admin/login' => ['controller' => 'user', 'action' => 'login', 'prefix' => 'admin'],
     'admin/logout' => ['controller' => 'user', 'action' => 'logout', 'prefix' => 'admin'],
     // admin panel

@@ -154,28 +154,37 @@
                 <button class="close" data-dismiss="modal"><span>&times;</span></button>
             </div>
             <div class="modal-body">
-                <form>
+                <form action="/admin/user/add" method="post" class="form-validate">
                     <div class="form-group">
                         <label for="title">Name</label>
-                        <input type="text" class="form-control">
+                        <input type="text" name="username" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="title">First name</label>
+                        <input type="text" name="name" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="title">Last name</label>
+                        <input type="text" name="surname" class="form-control">
                     </div>
                     <div class="form-group">
                         <label for="email">Email</label>
-                        <input type="email" class="form-control">
+                        <input type="email" name="email" class="form-control">
                     </div>
                     <div class="form-group">
                         <label for="password">Password</label>
-                        <input type="password" class="form-control">
+                        <input type="password" name="password" class="form-control">
                     </div>
                     <div class="form-group">
                         <label for="ConfirmPassword">Confirm Password</label>
-                        <input type="password" class="form-control">
+                        <input type="password" name="confirmPsw" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" class="btn btn-primary" value="Save">
+                        <input type="submit" class="btn btn-secondary" data-dismiss="modal" value="Close">
+                        <p class="result pt-2 text-danger float-right"></p>
                     </div>
                 </form>
-            </div>
-            <div class="modal-footer">
-                <button class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button class="btn btn-warning" data-dismiss="modal">Save Changes</button>
             </div>
         </div>
     </div>
