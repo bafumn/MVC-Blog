@@ -3,10 +3,15 @@
 namespace App\Controllers\Admin;
 
 use App\Core\Controller;
-use App\Models\User;
 
 class UserController extends Controller
 {
+    public function __construct($route)
+    {
+        parent::__construct($route);
+        $this->view->layout = 'admin';
+    }
+
     public function loginAction()
     {
         if (isset($_SESSION['admin'])) {
@@ -15,8 +20,7 @@ class UserController extends Controller
         $this->view->layout = 'login';
 
         if (!empty($_POST)) {
-            $user = new User();
-            if (!$user->login()) {
+            if (!$this->model->login()) {
                 $this->view->message('Wrong login or password!');
             } else {
                 $this->view->message(['url' => 'admin']);
@@ -40,5 +44,31 @@ class UserController extends Controller
             $this->model->addUser($_POST);
             $this->view->message(['url' => 'admin']);
         }
+    }
+
+    public function profileAction()
+    {
+        $vars = [
+            'user' => $this->model->getUserById($this->route['id'])
+        ];
+        $this->view->render('Profile', $vars);
+    }
+
+    public function editAction()
+    {
+        if (!empty($_POST)) {
+            if (!$this->model->profileValidate($_POST)) {
+                $this->view->message($this->model->error);
+            }
+            $_POST['id'] = $this->route['id'];
+            $this->model->updateUser($_POST);
+            $this->view->message('User updated!');
+        }
+    }
+
+    public function deleteAction()
+    {
+        $this->model->deleteUser($this->route['id']);
+        self::logoutAction();
     }
 }

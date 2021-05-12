@@ -6,6 +6,11 @@ use App\Core\Model;
 
 class User extends Model
 {
+    public function getUserById($id)
+    {
+        return $this->db->getRow('SELECT * FROM users WHERE id = :id', ['id' => $id]);
+    }
+
     public function login()
     {
         $login = !empty(trim($_POST['login'])) ? trim($_POST['login']) : null;
@@ -39,12 +44,37 @@ class User extends Model
         } elseif (!$email) {
             $this->error = 'Incorrect email';
             return false;
-        } elseif ($passwordLen < 5) {
+        }
+        if ($passwordLen < 5) {
             $this->error = 'The password must be more 5 characters!';
             return false;
         } elseif ($user['password'] != $user['confirmPsw']) {
             $this->error = 'Password mismatch';
             return false;
+        }
+        return true;
+    }
+
+    public function profileValidate($user)
+    {
+        $usernameLen = iconv_strlen($user['username']);
+        $email = filter_var($user['email'], FILTER_VALIDATE_EMAIL);
+        if ($usernameLen < 3 || $usernameLen > 30) {
+            $this->error = 'The username must be between 3 and 30 characters!';
+            return false;
+        } elseif (!$email) {
+            $this->error = 'Incorrect email';
+            return false;
+        }
+        if (!empty($user['password'])) {
+            $passwordLen = iconv_strlen($user['password']);
+            if ($passwordLen < 5) {
+                $this->error = 'The password must be more 5 characters!';
+                return false;
+            } elseif ($user['password'] != $user['confirmPsw']) {
+                $this->error = 'Password mismatch';
+                return false;
+            }
         }
         return true;
     }
@@ -59,6 +89,28 @@ class User extends Model
             'email' => $user['email'],
             'password' => password_hash($user['password'], PASSWORD_DEFAULT),
         ];
-        $this->db->query('INSERT INTO users VALUES (:id, :username, :firstName, :lastName, :email, :password)', $params);
+        return $this->db->query('INSERT INTO users VALUES (:id, :username, :firstName, :lastName, :email, :password)', $params);
+    }
+
+    public function updateUser($user)
+    {
+        $params = [
+            'id' => $user['id'],
+            'username' => $user['username'],
+            'firstName' => $user['firstName'],
+            'lastName' => $user['lastName'],
+            'email' => $user['email'],
+            'password' => password_hash($user['password'], PASSWORD_DEFAULT),
+        ];
+        if (empty($user['password'])) {
+            unset($params['password']);
+            return $this->db->query('UPDATE users SET username = :username, firstName = :firstName, lastName = :lastName, email = :email WHERE id = :id', $params);
+        }
+        return $this->db->query('UPDATE users SET username = :username, firstName = :firstname, lastName = :lastName, email = :email, password = : password WHERE id = :id', $params);
+    }
+
+    public function deleteUser($id)
+    {
+        return $this->db->query('DELETE FROM users  WHERE id = :id', ['id' => $id]);
     }
 }

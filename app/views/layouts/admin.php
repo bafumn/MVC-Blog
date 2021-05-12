@@ -29,22 +29,16 @@
                 <li class="nav-item px-2">
                     <a href="/admin/categories" class="nav-link">Categories</a>
                 </li>
-                <li class="nav-item px-2">
-                    <a href="/admin/users" class="nav-link">Users</a>
-                </li>
             </ul>
 
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item dropdown mr-3">
                     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
-                        <i class="fa fa-user"></i>Welcome Vlad
+                        <i class="fa fa-user"></i> <?php echo $_SESSION['admin']['username']; ?>
                     </a>
                     <div class="dropdown-menu">
-                        <a href="profile.html" class="dropdown-item">
+                        <a href="/admin/profile/<?php echo $_SESSION['admin']['id'] ?>" class="dropdown-item">
                             <i class="fa fa-user-circle"></i>Profile
-                        </a>
-                        <a href="settings.html" class="dropdown-item">
-                            <i class="fa fa-gear"></i>Settings
                         </a>
                     </div>
                 </li>

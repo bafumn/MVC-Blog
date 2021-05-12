@@ -21,6 +21,9 @@ return [
     'admin/categories' => ['controller' => 'category', 'action' => 'index', 'prefix' => 'admin'],
     // user control
     'admin/user/add' => ['controller' => 'user', 'action' => 'add', 'prefix' => 'admin'],
+    'admin/user/edit/(?P<id>[0-9]+)' => ['controller' => 'user', 'action' => 'edit', 'prefix' => 'admin'],
+    'admin/user/delete/(?P<id>[0-9]+)' => ['controller' => 'user', 'action' => 'delete', 'prefix' => 'admin'],
+    'admin/profile/(?P<id>[0-9]+)' => ['controller' => 'user', 'action' => 'profile', 'prefix' => 'admin'],
     'admin/login' => ['controller' => 'user', 'action' => 'login', 'prefix' => 'admin'],
     'admin/logout' => ['controller' => 'user', 'action' => 'logout', 'prefix' => 'admin'],
     // admin panel
